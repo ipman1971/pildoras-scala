@@ -21,6 +21,10 @@ object Interno {
   }
 }
 
+object checkLevelD {
+  def unapply(interno: Interno): Boolean = interno.level.equals("D")
+}
+
 trait BBVAMatcher {
 
   def analize(user: BBVAUser): String = user match {
