@@ -1,6 +1,6 @@
 package pildoras.scala.capsula1
 
-import net.bluetab.pildoras.scala.capsula1.{BBVAMatcher, BBVAUser, Externo, Interno}
+import net.bluetab.pildoras.scala.capsula1._
 import org.scalatest._
 
 class BBVAUserTest extends FunSuite with BBVAMatcher {
@@ -48,6 +48,17 @@ class BBVAUserTest extends FunSuite with BBVAMatcher {
     assert(otherAnalize(new Interno(name="Luis", pass="3334", level = "D"))=="soy un interno")
     assert(otherAnalize("sdfds")=="no soy de este mundo")
 
+  }
+
+  test("verifica level por medio de pattern match") {
+    def analizeInterno(interno: Any): String = interno match {
+      case interno @ checkLevelD() => s"es un nivel D"
+      case Interno(_,_,_)  => s"es interno sin nivel D"
+      case _ => s"no es interno o no tiene nivel D"
+    }
+    assert(analizeInterno(new Interno(name="Luis", pass="3334", level = "D"))=="es un nivel D")
+    assert(analizeInterno(new Interno(name="Pedro", pass="3334", level = "A"))=="es interno sin nivel D")
+    assert(analizeInterno(new Externo(name="Uan", pass="3334"))=="no es interno o no tiene nivel D")
   }
 
 }
