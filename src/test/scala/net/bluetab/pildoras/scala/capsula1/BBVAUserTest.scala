@@ -1,9 +1,5 @@
 package net.bluetab.pildoras.scala.capsula1
 
-<<<<<<< Updated upstream:src/test/scala/pildoras/scala/capsula1/BBVAUserTest.scala
-import net.bluetab.pildoras.scala.capsula1._
-=======
->>>>>>> Stashed changes:src/test/scala/net/bluetab/pildoras/scala/capsula1/BBVAUserTest.scala
 import org.scalatest._
 
 class BBVAUserTest extends FunSuite with BBVAMatcher {
