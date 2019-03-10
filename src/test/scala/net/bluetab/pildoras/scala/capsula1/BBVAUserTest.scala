@@ -1,6 +1,9 @@
-package pildoras.scala.capsula1
+package net.bluetab.pildoras.scala.capsula1
 
+<<<<<<< Updated upstream:src/test/scala/pildoras/scala/capsula1/BBVAUserTest.scala
 import net.bluetab.pildoras.scala.capsula1._
+=======
+>>>>>>> Stashed changes:src/test/scala/net/bluetab/pildoras/scala/capsula1/BBVAUserTest.scala
 import org.scalatest._
 
 class BBVAUserTest extends FunSuite with BBVAMatcher {
@@ -39,8 +42,8 @@ class BBVAUserTest extends FunSuite with BBVAMatcher {
   test("pattern por tipos") {
 
     def otherAnalize(objeto: Any): String = objeto match {
-      case a: Externo => "soy un externo"
-      case b: Interno => "soy un interno"
+      case _: Externo => "soy un externo"
+      case _: Interno => "soy un interno"
       case _ => "no soy de este mundo"
     }
 
