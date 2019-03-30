@@ -5,3 +5,5 @@ Capsulas consumidas:
 
 + Case class
 + Option => Some y None
++ Funciones recursivas
++ Excepciones
